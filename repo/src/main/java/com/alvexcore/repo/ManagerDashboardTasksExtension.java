@@ -19,11 +19,13 @@
 
 package com.alvexcore.repo;
 
+import com.alvexcore.repo.RepositoryExtension;
 /**
  * ManagerDashboardTasks extension implementation
  */
 
 public class ManagerDashboardTasksExtension extends RepositoryExtension {
+
 
 	// constructor
 	public ManagerDashboardTasksExtension() throws Exception {
@@ -32,7 +34,4 @@ public class ManagerDashboardTasksExtension extends RepositoryExtension {
 		extInfoPath = "alvex-manager-dashboard-tasks.properties";
 	}
 
-	@Override
-	void upgradeConfiguration(String oldVersion, String oldEdition) {
-	}
 }
