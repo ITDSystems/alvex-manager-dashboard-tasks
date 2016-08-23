@@ -28,7 +28,8 @@ public class ManagerDashboardTasksExtension extends ShareExtension {
 	// constructor
 	public ManagerDashboardTasksExtension() throws Exception {
 		id = "manager-dashboard-tasks";
-		fileListPath = "alvex-manager-dashboard-tasks-file-list.txt";
-		extInfoPath = "alvex-manager-dashboard-tasks.properties";
+		// can't find symbol fix
+        //fileListPath = "alvex-manager-dashboard-tasks-file-list.txt";
+		//extInfoPath = "alvex-manager-dashboard-tasks.properties";
 	}
 }

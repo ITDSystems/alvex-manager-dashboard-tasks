@@ -28,7 +28,8 @@ public class ManageesWorkflowsExtension extends ShareExtension {
 	// constructor
 	public ManageesWorkflowsExtension() throws Exception {
 		id = "managees-workflows";
-		fileListPath = "alvex-managees-workflows-file-list.txt";
-		extInfoPath = "alvex-managees-workflows.properties";
+		// can't find symbol fix
+        //fileListPath = "alvex-managees-workflows-file-list.txt";
+		//extInfoPath = "alvex-managees-workflows.properties";
 	}
 }
