@@ -16,6 +16,7 @@ Compatible with Alfresco 5.1.
 This component depends on:
 * [Alvex Utils](https://github.com/ITDSystems/alvex-utils)
 * [Alvex Orgchart](https://github.com/ITDSystems/alvex-orgchart)
+* [Alvex Project Management](https://github.com/ITDSystems/alvex-project-management)
 
 # Downloads
 
