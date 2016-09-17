@@ -52,5 +52,11 @@
       <version>1.29-SNAPSHOT</version>
       <classifier>installable</classifier>
     </dependency>
+    <dependency>
+      <groupId>com.alvexcore.repo</groupId>
+      <artifactId>project-management</artifactId>
+      <version>1.30-SNAPSHOT</version>
+      <classifier>installable</classifier>
+    </dependency>
    </dependencies>
 </project>
