@@ -41,9 +41,14 @@ if (typeof Alvex == "undefined" || !Alvex)
 	Alvex.ManageesTasksViewer = function(htmlId)
 	{
 		Alvex.ManageesTasksViewer.superclass.constructor.call(this, "ManageesTasksViewer", htmlId);
+
+        /**
+        * Decoupled event listeners
+        */
+        YAHOO.Bubbling.on("filterChanged", this.onFilterChanged, this);
+
 		return this;
 	};
-
 
 	YAHOO.extend(Alvex.ManageesTasksViewer, Alfresco.component.Base,
 	{
@@ -52,7 +57,8 @@ if (typeof Alvex == "undefined" || !Alvex)
 			managees: [],
 			hiddenTaskTypes: [],
 			maxItems: 50,
-			compactMode: false
+			compactMode: false,
+			filterParameters: []
 		},
 
 
@@ -129,11 +135,19 @@ if (typeof Alvex == "undefined" || !Alvex)
 				},
 				dataSource:
 				{
-					url: Alfresco.constants.PROXY_URI + "api/alvex/task-instances?" 
+					url: Alfresco.constants.PROXY_URI + "api/alvex/task-instances?"
 							+ "authority=" + this.options.managees[m].userName
 							+ "&properties=bpm_priority,bpm_status,bpm_dueDate,bpm_description"
-							+ "&exclude=" + this.options.hiddenTaskTypes.join(",")
-							+ "&state=IN_PROGRESS"
+							+ "&exclude=" + this.options.hiddenTaskTypes.join(","),
+                    defaultFilter:
+                    {
+                        filterId: "workflows.active"
+                    },
+                    filterResolver: this.bind(function(filter)
+                    {
+                        // Reuse method form WorkflowActions
+                        return this.createFilterURLParameters(filter, this.options.filterParameters);
+                    })
 				},
 				paginator:
 				{
@@ -295,6 +309,25 @@ if (typeof Alvex == "undefined" || !Alvex)
 				if (managees[i-1].userName !== managees[i].userName)
 					ret.push(managees[i]);
 			return ret;
-		}
+		},
+
+		/**
+         * Fired when the currently active filter has changed
+         *
+         * @method onFilterChanged
+         * @param layer {string} the event source
+         * @param args {object} arguments object
+         */
+        onFilterChanged: function BaseFilter_onFilterChanged(layer, args)
+        {
+            var filter = Alfresco.util.cleanBubblingObject(args[1]);
+            //Dom.get(this.id + "-filterTitle").innerHTML = $html(this.msg("filter." + filter.filterId + (filter.filterData ? "." + filter.filterData : ""), filter.filterData));
+        }
 	});
+
+    /**
+     * Augment prototype with Common Workflow actions to reuse createFilterURLParameters
+     */
+    YAHOO.lang.augmentProto(Alvex.ManageesTasksViewer, Alfresco.action.WorkflowActions);
+
 })();
