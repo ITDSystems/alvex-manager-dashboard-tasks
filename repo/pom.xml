@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.alvexcore.repo</groupId>
   <artifactId>manager-dashboard-tasks</artifactId>
-  <version>1.18-SNAPSHOT</version>
+  <version>1.19-SNAPSHOT</version>
   <name>Alvex Manager Dashboard Tasks [Repo]</name>
   <packaging>${packaging.type}</packaging>
   <parent>
