@@ -28,6 +28,6 @@ To build Alvex follow [this guide](https://github.com/ITDSystems/alvex#build-com
 
 # Quick Start
 
-1. Create [Orgchart](https://github.com/ITDSystems/alvex-orgchart) and [configure supervisors] for all units.
+1. Create [Orgchart](https://github.com/ITDSystems/alvex-orgchart) and configure supervisors for all units.
 2. Supervisor can open *Tasks of my Team* and *Workflows of my Team* pages from *Tasks* submenu in the header.
 3. Also supervisor can add *Tasks of my Team* dashlet to the dashboard.
