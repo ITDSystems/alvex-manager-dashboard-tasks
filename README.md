@@ -1,3 +1,5 @@
+**This extension for Alfresco is obsolete and unsupported. Use it on your own risk.**
+
 [![Build Status](https://travis-ci.org/ITDSystems/alvex-manager-dashboard-tasks.svg?branch=master)](https://travis-ci.org/ITDSystems/alvex-manager-dashboard-tasks)
 
 Alvex manager dashboard tasks
